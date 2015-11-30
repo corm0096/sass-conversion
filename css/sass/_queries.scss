@@ -1,86 +1,428 @@
 @include query(701px,900px)
 {
-	
-	header
+    header
 	{
-		width:700px;
-		margin: 0 auto;
-		min-height: 8rem;
-	}
-	.bg-header
-	{
+        width: 700px;
+        margin: 0 auto;
+        min-height: 8rem;
+
 		h1
 		{
-			height:auto;
-			i
-			{
-				color:$dbrown;
-				display:inline;
-				float:none;
-				vertical-align: baseline;
-				font-size:4rem;
-			}
-			span
-			{
-				float:none;
-				letter-spacing: 0.25rem;
-				text-align: left;
-			}
-		}
-		li
-		{
-			@include colsplitter(5)
-				{
-					a
-					{
-						font-size:1rem;
-						line-height:2rem;
-						border:0 1px 0 0;
-					}
-				}
-		}
-	}
-	.focal, .content1, .content2, footer
-	{
-		width: 700px;
-		margin: 0 auto;
-	}
+			width: 100%;
+			color: $dbrown;
 
-	.bg-content2
-	{
-				background-color: $lblue;
-	}
-	.col-4
-	{
-		@include colsplitter(2)
-		{
-			padding: 0.5rem 2rem 1rem;
-			h4, li
-			{			
-				font-size: 1.4rem;
+			i.fa-lg
+			{
+				display:inline;
+				color: $dbrown;
+				vertical-align:baseline;
+				float:none;
+				font-size: 4rem;
+				line-height: 6.3968rem;
+
+				~ span
+				{
+					float: none;
+					letter-spacing: 0.25rem;
+					font-size: 4rem;
+					text-align: left;
+				}
 			}
-		}
-	}
-	footer .fa-circle
-	{
-		color: $mblue;
+	    }
+    
+		&:before, &:after
+		{
+        	width:230px;
+    	}
+	
+		nav
+		{
+			position: static;
+			clear:both;
+			width: 100%;
+			padding: 0;
+			
+			&>ul>li
+			{
+    		    width:20%;
+				float: left;
+				
+				&>a
+				{
+					font-size: 1rem;
+					line-height: 2rem;
+					min-height: 6rem;
+					border:none;
+					border-left:1px solid $lgrey; 
+					padding:1.0rem;
+					background-color: $white;
+					
+					&:last-child
+					{
+						border-right:1px solid $lgrey;
+					}
+			    }
+			}
+	    }
 	}
 	
-	.col-2:last-child
+    section.focal, section.content1, section.content2, footer
 	{
-		unicode-bidi: bidi-override;
-        direction: rtl;
+        width: 700px; 
+        margin: 0 auto;    
     }
-    
-	footer h4[lang=ar]
+
+	.col-4
 	{
-       display:block;
+		@include colsplitter(2);
     }
-    
-	footer h4[lang=de],
-    footer h4[lang=en],
-    footer h4[lang=ru]
+
+	section.content2
 	{
+		h4 li
+		{
+        font-size: 1.4rem;
+    	}
+	}
+	
+	footer
+	{
+		.fa-circle
+		{
+        	color: $mblue;
+	    }
+	    .col-2:last-child
+		{
+        	unicode-bidi: bidi-override;
+        	direction: rtl;
+		}
+		h4[lang=ar]
+		{
+			display:block;
+    	}
+		h4[lang=de], h4[lang=en], h4[lang=ru]
+		{
         display:none;
+    	}
+	}
+}
+
+@include query(901px, 1400px)
+{
+    header
+	{
+        width: 900px;
+        margin: 0 auto;
+
+		&:before, &:after
+		{
+        	width:300px;
+		}
+		h1
+		{
+			width: 100%;
+			color: $dblue;
+    	
+			i.fa-lg
+			{
+				display:inline;
+				color: $dblue;
+				vertical-align:baseline;
+				float:none;
+				font-size: 4rem;
+				line-height: 6.3968rem;
+
+				~ span
+				{
+					float: none;
+					letter-spacing: 0.25rem;
+					font-size: 4rem;
+					text-align: left;
+				}
+			}
+		}
+		nav
+		{
+			position: static;
+			clear:both;
+			width: 100%;
+			padding: 0;
+
+			&>ul>li
+			{
+				width:20%;
+				float: left;
+				background-color: $white;
+				
+				&:first-child a
+				{
+        			border-left:none;
+    			}
+				
+				&>a
+				{
+					font-size: 1rem;
+					line-height: 2rem;
+					min-height: 2rem;
+					border:none;
+					border-left:1px solid $lgrey; 
+					padding: 0 1.0rem;
+					margin: 1.0rem 0;
+					background-color: $white;
+			    }
+		    }
+	    }
+	}
+
+    section.focal, section.content1, section.content2, footer
+	{
+        width: 900px; 
+        margin: 0 auto;    
     }
+    section.focal
+	{	
+		h2
+		{
+			width: 600px; 
+			margin: 0 auto;
+	    }
+    	p.author
+		{
+			width: 600px; 
+			margin: 0 auto;
+	    }
+	}
+		
+	.col-3
+	{
+		@include colsplitter(3.33333);
+		margin-left: 5%;
+
+		&:first-child
+		{
+			margin-left: 0;
+		}
+	}
+		
+    .col-4
+	{
+		@include colsplitter(4.54545);
+		margin-left: 4%;
+
+		&:first-child
+		{
+			margin-left: 0;
+		}
+	}
+	section.content1
+	{
+		h3
+		{
+			font-size: 2rem;
+			font-weight: 100;
+			.fa-2x
+			{
+				font-size: 2rem;
+				padding-right: 1rem;
+			}
+		}
+	}
+	
+    section.content2
+	{
+		h4, li
+		{
+        	font-size: 1.4rem;
+	    }
+
+		p
+		{
+			font-size: 1rem;
+			font-weight: 400;
+	    }
+	}
+	footer
+	{
+		.fa-circle
+		{
+        	color: $lbrown;
+    	}
+    	h4[lang=ru]
+		{
+       		display:block; 
+    	}
+ 		h4[lang=de], h4[lang=ar], h4[lang=en]
+		{
+        	display:none;
+    	}
+	}
+}
+
+
+@include query(1401px,20000px)
+{
+    header
+	{
+        width: 1400px;
+        margin:0 auto;
+
+		&:before, &:after
+		{
+        	width:450px;
+    	}
+
+		h1
+		{
+			width: 100%;
+			color: $dbrown;
+	    
+			i.fa-lg
+			{
+				display:inline;
+				color: $dbrown;
+				vertical-align:baseline;
+				float:none;
+				font-size: 4rem;
+				line-height: 6.3968rem;
+	
+				~ span
+				{
+			        float: none;
+					letter-spacing: 0.25rem;
+					font-size: 4rem;
+					text-align: left;
+				}
+			}
+    	}
+		
+		nav
+		{
+			position: static;
+			clear:both;
+			width: 100%;
+			padding: 0;
+		
+			&>ul>li
+			{
+				width:20%;
+				float: left;
+				background-color: $white;
+
+
+				&>a
+				{
+					font-size: 1.4rem;
+					line-height: 2rem;
+					min-height: 2rem;
+					border:none;
+					border-left:1px solid $lgrey; 
+					padding:0 1.0rem;
+					margin:1.0rem 0;
+					background-color: $white;
+				}
+				
+				&:first-child a
+				{
+			        border-left:none;
+			    }
+			}
+		}
+	}
+	
+	section.focal, section.content1, section.content2, footer
+	{
+        width: 1400px; 
+        margin: 0 auto;    
+    }
+    section.focal
+	{
+		h2
+		{
+			font-size: 4rem;
+			width: 600px; 
+			margin: 0 auto;
+	    }
+    	p.author
+		{
+			width: 600px; 
+			margin: 0 auto;
+	    }
+	}
+    .col-3
+	{
+		@include colsplitter(3.333333);	
+        margin-left: 5%;
+
+		&:first-child
+		{
+			margin-left: 0;
+		}
+	}
+    .col-4
+	{
+		@include colsplitter(4.5454545);
+        margin-left: 4%;
+ 	
+		&:first-child
+		{
+        	margin-left: 0;
+    	}
+	}
+	
+    section.content1
+	{
+		h3
+		{
+ 	       font-size: 2.827rem;
+    	    font-weight: 100;
+			
+			.fa-2x
+			{
+				font-size: 2.827rem;
+				padding-right: 1rem;
+				vertical-align: middle;
+			}
+    	}
+	} 
+	
+    section.content2
+	{
+		h4, li
+		{
+        	font-size: 2rem;
+    	}
+
+		p
+		{
+        	font-size: 1.4rem;
+       		font-weight: 400;
+    	}
+	}
+	
+    footer
+	{
+		p
+		{
+        	font-size: 1.4rem;
+        	letter-spacing: 0.2rem;
+   
+			&:last-child
+			{
+		        color: $lgrey;
+			}
+		}
+		.fa-circle
+		{
+    	    color: $mblue;
+   		}
+    
+    	h4[lang=en]
+		{
+			display:block; 
+	    }
+    	h4[lang=de], h4[lang=ar], h4[lang=ru]
+		{
+        	display:none;
+    	}
+	}
 }
