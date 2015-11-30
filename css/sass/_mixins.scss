@@ -1,0 +1,15 @@
+@mixin colsplitter($cols)
+{
+	width: 100%/$cols;
+	float:left;
+	@content;
+}
+
+@mixin query($min, $max)
+{
+	@media all and (min-width: $min) and (max-width: $max)
+	{
+		@content;
+	}
+}
+		
