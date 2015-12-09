@@ -7,10 +7,10 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 	
-	&:after, &:before{
+/*	&:after, &:before{
     -webkit-box-sizing: inherit;
     box-sizing: inherit;
-	}
+	}*/
 }
 
 html{
@@ -47,10 +47,10 @@ ul{
 		height:1rem;
 		background-color: $dblue;
 	}
-	&:before
+/*	&:before
 	{
     	left:0;
-	}
+	}*/
 	&:after
 	{
     	right:0;
@@ -287,5 +287,5 @@ footer
     	display:none;
 	}
 }
-@import 'queries';
 
+@import 'queries';
